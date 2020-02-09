@@ -20,11 +20,14 @@ public class MovementController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetMouseButtonDown(1))
+        {
+            unitAgent.SetDestination(GetPointUnderCursor());
+        }
     }
 
 
-    private Vector3 getPointUnderCursor()
+    private Vector3 GetPointUnderCursor()
     {
         Vector2 screenPos = Input.mousePosition;
         Vector3 mouseWorldPos = cam.ScreenToWorldPoint(screenPos);
